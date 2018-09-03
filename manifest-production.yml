@@ -1,0 +1,12 @@
+---
+applications:
+  - name: publish-data-production-elasticsearch-monitor
+    command: URI=$(python -c "import os, json; print(json.loads(os.environ['VCAP_SERVICES'])['elasticsearch'][0]['credentials']['uri'])") && elasticsearch_exporter -es.uri $URI -web.listen-address "0.0.0.0:$PORT"
+    memory: 512M
+    buildpack: https://github.com/cloudfoundry/go-buildpack.git#v1.8.26
+    env:
+      GOPACKAGENAME: github.com/justwatchcom/elasticsearch_exporter
+    services:
+    - publish-production-secrets
+    - elasticsearch-beta-production
+    - re-ip-whitelist-service

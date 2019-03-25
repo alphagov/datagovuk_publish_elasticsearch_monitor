@@ -10,6 +10,6 @@ applications:
       GOPACKAGENAME: github.com/justwatchcom/elasticsearch_exporter
     services:
     - publish-production-secrets
-    - elasticsearch-beta-production
+    - elasticsearch-6-beta-production
     - re-ip-whitelist-service
     - dgu-prometheus

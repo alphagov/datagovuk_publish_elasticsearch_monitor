@@ -1,3 +1,5 @@
+> data.gov.uk Publish Elasticsearch Metrics Exporter is retired
+
 # data.gov.uk Publish Elasticsearch Metrics Exporter
 
 The repository contains the deployment manifests to expose Elasticsearch queue metrics for data.gov.uk Publish.
